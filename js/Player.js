@@ -21,7 +21,7 @@ class Player {
       positionY: this.positionY,
     });
   }
-  //AM
+  //TA
   getDistance() {
     var playerDistanceRef = database.ref("players/player" + this.index);
     playerDistanceRef.on("value", data => {
@@ -46,18 +46,21 @@ class Player {
     });
   }
 
+  //SA
   update() {
     var playerIndex = "players/player" + this.index;
     database.ref(playerIndex).update({
       name: this.name,
       positionX: this.positionX,
       positionY: this.positionY,
-    });
+     });
   }
+
+  //Bp
   static getPlayersInfo() {
     var playerInfoRef = database.ref("players");
     playerInfoRef.on("value", data => {
-      allPlayers = data.val()
+      allPlayers = data.val();
     });
   }
-}
+} 
