@@ -126,6 +126,15 @@ class Game {
 
         }
       }
+      const finishLine = height * 6 - 100;
+
+      if(player.positionY > finishLine) {
+        gameState = 2;
+        player.rank += 1;
+        player.updatecarsAtEnd(player.rank);
+        Player.update();
+        this.showRank();
+      }
 
       // manejando eventos keyboard 
       if (keyIsDown(UP_ARROW)) {
@@ -137,6 +146,15 @@ class Game {
       drawSprites();
     }
   }
+  /*showLeaderboard();
+  {
+    var leader1, leader2;
+    var players = Onject.value(allPlayers);
+    if(
+      (players[0].rank === 0 && players[1].rank === 0) ||
+      players[0].rank === 1
+    )
+  }*/
 
   handleFuel(index) {
     // Agregando combustible
