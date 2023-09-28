@@ -151,6 +151,12 @@ class Game {
       drawSprites();
     }
   }
+  showFuealBar() {
+    push("white");
+    fill("yellow");
+    noStroke();
+    pop();
+  }
 
   handleFuel(index) {
     // Agregando combustible
